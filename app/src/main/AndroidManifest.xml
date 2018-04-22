@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="generisches.lab.trial">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -43,9 +50,25 @@
             android:name=".RecieveAlarm"
             android:process=".remote" />
 
-        <activity android:name=".DBMain" />
-        <activity android:name=".MultiThread"
-            android:label="Threads threads threads"></activity>
+        <activity
+            android:name=".DBMain"
+            android:label="SQlLLLLiteeee" />
+        <activity
+            android:name=".MultiThread"
+            android:label="Threads threads threads" />
+        <activity
+            android:name=".RSSFeed"
+            android:label="Read news shit" />
+        <activity android:name=".GPS" />
+        <activity android:name=".SMSRecieve" />
+
+        <receiver
+            android:name=".SmsBroadcastReceiver"
+            android:exported="true">
+            <intent-filter android:priority="999">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
