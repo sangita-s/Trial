@@ -2,12 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="generisches.lab.trial">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.WRITE_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -18,8 +22,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/CollapsibleToolbar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -69,6 +72,82 @@
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
             </intent-filter>
         </receiver>
+
+        <activity android:name=".SDCard" />
+        <activity
+            android:name=".NofityMe"
+            android:label="Notify Basics" />
+        <activity
+            android:name=".FirebaseAuthBasics"
+            android:label="FireBase Push" />
+
+        <service android:name=".MyFirebaseInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".UploadActivity" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+
+        <activity android:name=".FBAfterLogin" />
+        <activity
+            android:name=".NoteList"
+            android:label="@string/title_activity_note_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FragmentTabs"
+            android:label="@string/title_activity_fragment_tabs"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Phonebook"
+            android:label="Call Friends" />
+        <activity
+            android:name=".SchonConstraint"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".Bank"
+            android:label="Grid View" />
+        <activity android:name=".Ideas" />
+        <activity
+            android:name=".Add"
+            android:theme="@style/AppThemeMusic" />
+        <activity
+            android:name=".Links"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".activities.Wifi"
+            android:theme="@style/AnimeAppTheme" />
+        <activity
+            android:name=".activities.AnimeActivity"
+            android:theme="@style/AnimeAppTheme" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".Mapp"
+            android:label="@string/title_activity_mapp" />
+        <activity android:name=".BookDetailActivity"></activity>
     </application>
 
 </manifest>

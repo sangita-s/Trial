@@ -3,4 +3,33 @@
     <color name="colorPrimary">#222222</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#987654</color>
+    <color name="colorGreen">#009900</color>
+
+    <color name="blueDark">#2f333f</color>
+    <color name="blueLight">#49acd5</color>
+    <color name="green">#45bc62</color>
+    <color name="orange">#eaad43</color>
+
+    <color name="newcolorPrimary">#393939</color>
+    <color name="newcolorPrimaryDark">#2f2f2f</color>
+    <color name="newcolorAccent">#52b7f8</color>
+    <color name="backgroundFragment">#2b2b2b</color>
+
+    <color name="backgroundColour">#fcfcfc</color>
+    <color name="deepPurple">#7c4dff</color>
+    <color name="materialYello">#ffb300</color>
+    <color name="materialgreen">#00bfa5</color>
+    <color name="lightgrayline">#ededed</color>
+
+    <color name="colorWhite">#ffffff</color>
+    <color name="transParentWhite">#cccccc</color>
+
+    <color name="newcolorPrimary2">#065a66</color>
+    <color name="newcolorPrimaryDark2">#00303c</color>
+    <color name="newcolorAccent2">#EC407a</color>
+
+    <color name="animcolorPrimary">#00aff0</color>
+    <color name="animcolorPrimaryDark">#097fb2</color>
+    <color name="animcolorAccent">#ec4070</color>
+
 </resources>

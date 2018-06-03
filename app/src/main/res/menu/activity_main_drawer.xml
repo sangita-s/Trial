@@ -5,6 +5,14 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_pb"
+            android:icon="@android:drawable/sym_contact_card"
+            android:title="Phonebook Fragment" />
+        <item
+            android:id="@+id/nav_tab"
+            android:icon="@android:drawable/ic_menu_edit"
+            android:title="Fragment Tab" />
+        <item
             android:id="@+id/nav_camera"
             android:icon="@drawable/ic_menu_camera"
             android:title="Change Font Size" />
@@ -25,6 +33,10 @@
             android:icon="@drawable/ic_menu_manage"
             android:title="RSS" />
         <item
+            android:id="@+id/nav_firebase"
+            android:icon="@android:drawable/ic_menu_myplaces"
+            android:title="Firebase Notify" />
+        <item
             android:id="@+id/nav_multi"
             android:icon="@android:drawable/ic_input_get"
             android:title="Multithreading" />
@@ -44,18 +56,22 @@
             android:id="@+id/nav_Alarm"
             android:icon="@android:drawable/ic_lock_idle_alarm"
             android:title="Alarm" />
+        <item
+            android:id="@+id/nav_notif"
+            android:icon="@android:drawable/star_big_on"
+            android:title="Notify" />
     </group>
 
     <item android:title="Communicate">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Graphic Primitive" />
-            <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
                 android:title="DB" />
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Graphic Primitive" />
         </menu>
     </item>
 

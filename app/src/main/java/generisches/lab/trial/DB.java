@@ -5,11 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
-
-import java.io.Console;
 
 public class DB extends SQLiteOpenHelper {
 
@@ -37,11 +33,7 @@ public class DB extends SQLiteOpenHelper {
         v.put("NAME", n);
         v.put("GPA", g);
         long result = db.insert("CLASSDETAIL", null, v);
-        if (result != 1) {
-            return true;
-        } else {
-            return false;
-        }
+        return result != 1;
     }
 
     public Boolean update(String r, String n, String g) {

@@ -1,7 +1,7 @@
 package generisches.lab.trial;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,23 +23,23 @@ public class Calculator extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator);
 
-        nine = (Button) findViewById(R.id.btn_9);
-        eig = (Button) findViewById(R.id.btn_8);
-        sev = (Button) findViewById(R.id.btn_7);
-        six = (Button) findViewById(R.id.btn_6);
-        fiv = (Button) findViewById(R.id.btn_5);
-        four = (Button) findViewById(R.id.btn_4);
-        thr = (Button) findViewById(R.id.btn_3);
-        two = (Button) findViewById(R.id.btn_2);
-        one = (Button) findViewById(R.id.btn_1);
-        zero = (Button) findViewById(R.id.btn_zero);
-        dot = (Button) findViewById(R.id.btn_dot);
-        plus = (Button) findViewById(R.id.btn_add);
-        min = (Button) findViewById(R.id.btn_min);
-        div = (Button) findViewById(R.id.btn_div);
-        mul = (Button) findViewById(R.id.btn_mul);
-        eq = (Button) findViewById(R.id.btn_equal);
-        cl = (Button) findViewById(R.id.btn_clear);
+        nine = findViewById(R.id.btn_9);
+        eig = findViewById(R.id.btn_8);
+        sev = findViewById(R.id.btn_7);
+        six = findViewById(R.id.btn_6);
+        fiv = findViewById(R.id.btn_5);
+        four = findViewById(R.id.btn_4);
+        thr = findViewById(R.id.btn_3);
+        two = findViewById(R.id.btn_2);
+        one = findViewById(R.id.btn_1);
+        zero = findViewById(R.id.btn_zero);
+        dot = findViewById(R.id.btn_dot);
+        plus = findViewById(R.id.btn_add);
+        min = findViewById(R.id.btn_min);
+        div = findViewById(R.id.btn_div);
+        mul = findViewById(R.id.btn_mul);
+        eq = findViewById(R.id.btn_equal);
+        cl = findViewById(R.id.btn_clear);
         et = findViewById(R.id.enterNo);
         t = findViewById(R.id.textView6);
 

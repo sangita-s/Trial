@@ -2,8 +2,8 @@ package generisches.lab.trial;
 
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,12 +19,12 @@ public class ChangeFontSizeColor extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_font_size_color);
-        tv1=(EditText)findViewById(R.id.editText1);
-        tv2=(EditText)findViewById(R.id.editText2);
-        tv3=(EditText)findViewById(R.id.editText3);
-        tv4=(EditText)findViewById(R.id.editText4);
-        tv=(TextView)findViewById(R.id.textView1);
-        bu=(Button)findViewById(R.id.button1);
+        tv1= findViewById(R.id.editText1);
+        tv2= findViewById(R.id.editText2);
+        tv3= findViewById(R.id.editText3);
+        tv4= findViewById(R.id.editText4);
+        tv= findViewById(R.id.textView1);
+        bu= findViewById(R.id.button1);
         tv.setText("Font Color and Size Demo");
 
         bu.setOnClickListener(new View.OnClickListener() {

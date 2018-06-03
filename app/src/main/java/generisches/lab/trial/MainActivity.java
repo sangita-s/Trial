@@ -9,22 +9,44 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import generisches.lab.trial.activities.Wifi;
+
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
+
+    private CardView bankingCard, wifiCard, addCard, ideaCard, linkCard, mapCard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //CollapsingToolbarLayout c_toolbar = findViewById(R.id.collapsingtoolbar);
+        //c_toolbar.setTitle("Helooo");
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        bankingCard = findViewById(R.id.banking_card);
+        wifiCard = findViewById(R.id.wifi_card);
+        addCard = findViewById(R.id.add_card);
+        ideaCard = findViewById(R.id.ideas_card);
+        linkCard = findViewById(R.id.links_card);
+        mapCard = findViewById(R.id.map_card);
+
+        bankingCard.setOnClickListener(this);
+        wifiCard.setOnClickListener(this);
+        addCard.setOnClickListener(this);
+        linkCard.setOnClickListener(this);
+        ideaCard.setOnClickListener(this);
+        mapCard.setOnClickListener(this);
+
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -33,19 +55,19 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -95,6 +117,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_manage) {
             Intent i = new Intent(MainActivity.this, Calculator.class);
             startActivity(i);
+        } else if (id == R.id.nav_tab) {
+            Intent i = new Intent(MainActivity.this, FragmentTabs.class);
+            startActivity(i);
         } else if (id == R.id.nav_share) {
             Intent i = new Intent(MainActivity.this, GraphicPrimitive.class);
             startActivity(i);
@@ -123,12 +148,38 @@ public class MainActivity extends AppCompatActivity
             startActivity(i);
         }
         else if (id == R.id.nav_SD) {
-            Intent i = new Intent(MainActivity.this, DB.class);
+            Intent i = new Intent(MainActivity.this, SDCard.class);
+            startActivity(i);
+        }
+        else if(id == R.id.nav_notif){
+            Intent i = new Intent(MainActivity.this, NofityMe.class);
+            startActivity(i);
+        }
+        else if(id == R.id.nav_firebase){
+            Intent i = new Intent(MainActivity.this, FirebaseAuthBasics.class);
+            startActivity(i);
+        }
+        else if(id == R.id.nav_pb){
+            Intent i = new Intent(MainActivity.this, Phonebook.class);
             startActivity(i);
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent i;
+        switch (v.getId()){
+            case R.id.banking_card : i = new Intent(this, Bank.class); startActivity(i); break;
+            case R.id.ideas_card : i = new Intent(this, Ideas.class); startActivity(i); break;
+            case R.id.add_card : i = new Intent(this,Add.class); startActivity(i); break;
+            case R.id.links_card : i = new Intent(this, Links.class); startActivity(i); break;
+            case R.id.wifi_card : i = new Intent(this, Wifi.class); startActivity(i); break;
+            case R.id.map_card : i = new Intent(this, Mapp.class); startActivity(i); break;
+            default:break;
+        }
     }
 }
